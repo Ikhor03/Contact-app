@@ -12,7 +12,7 @@ import styles from './welcome.style';
 import { icons, SIZES } from '../../../constants';
 import { useRouter } from 'expo-router';
 
-const contactType = ['teman', 'keluarga', 'kolega'];
+const contactType = [ 'male', 'female', 'teman', 'keluarga', 'kolega'];
 
 const Welcome = () => {
   const [activeContactType, setActiveContactType] = useState()

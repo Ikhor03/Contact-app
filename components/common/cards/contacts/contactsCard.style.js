@@ -3,19 +3,20 @@ import { StyleSheet } from "react-native";
 import { COLORS, FONT, SHADOWS, SIZES } from "../../../../constants";
 
 const styles = StyleSheet.create({
-  container: (selectedJob, item) => ({
-    width: 250,
+  container: (selectedContact, item) => ({
+    width: "100vh",
     padding: SIZES.xLarge,
-    backgroundColor: selectedJob === item.job_id ? COLORS.primary : "#FFF",
+    backgroundColor: selectedContact === item.id ? COLORS.primary : "#FFF",
     borderRadius: SIZES.medium,
     justifyContent: "space-between",
     ...SHADOWS.medium,
     shadowColor: COLORS.white,
+    margin : '2px'
   }),
-  logoContainer: (selectedJob, item) => ({
+  logoContainer: (selectedContact, item) => ({
     width: 50,
     height: 50,
-    backgroundColor: selectedJob === item.job_id ? "#FFF" : COLORS.white,
+    backgroundColor: selectedContact === item.id ? "#FFF" : COLORS.white,
     borderRadius: SIZES.medium,
     justifyContent: "center",
     alignItems: "center",
@@ -24,7 +25,7 @@ const styles = StyleSheet.create({
     width: "70%",
     height: "70%",
   },
-  companyName: {
+  firstName: {
     fontSize: SIZES.medium,
     fontFamily: FONT.regular,
     color: "#B3AEC6",
@@ -33,10 +34,10 @@ const styles = StyleSheet.create({
   infoContainer: {
     marginTop: SIZES.large,
   },
-  jobName: (selectedJob, item) => ({
+  name: (selectedContact, item) => ({
     fontSize: SIZES.large,
     fontFamily: FONT.medium,
-    color: selectedJob === item.job_id ? COLORS.white : COLORS.primary,
+    color: selectedContact === item.id ? COLORS.white : COLORS.primary,
   }),
   infoWrapper: {
     flexDirection: "row",
@@ -44,10 +45,10 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     alignItems: "center",
   },
-  publisher: (selectedJob) => ({
+  publisher: (selectedContact) => ({
     fontSize: SIZES.medium - 2,
     fontFamily: FONT.bold,
-    color: selectedJob === item.job_id ? COLORS.white : COLORS.primary,
+    color: selectedContact === item.id ? COLORS.white : COLORS.primary,
   }),
   location: {
     fontSize: SIZES.medium - 2,
