@@ -4,11 +4,13 @@ import { COLORS, FONT, SHADOWS, SIZES } from "../../../../constants";
 
 const styles = StyleSheet.create({
   container: (selectedContact, item) => ({
-    width: "100vh",
-    padding: SIZES.xLarge,
-    backgroundColor: selectedContact === item.id ? COLORS.primary : "#FFF",
-    borderRadius: SIZES.medium,
+    flex : 1,
     justifyContent: "space-between",
+    alignItems : 'center',
+    flexDirection: 'row',
+    padding: SIZES.medium,
+    backgroundColor: selectedContact === item.id ? COLORS.primary : "#FFF",
+    borderRadius: SIZES.small,
     ...SHADOWS.medium,
     shadowColor: COLORS.white,
     margin : '2px'
@@ -25,36 +27,21 @@ const styles = StyleSheet.create({
     width: "70%",
     height: "70%",
   },
-  firstName: {
+  secondaryText: {
     fontSize: SIZES.medium,
     fontFamily: FONT.regular,
     color: "#B3AEC6",
     marginTop: SIZES.small / 1.5,
   },
-  infoContainer: {
-    marginTop: SIZES.large,
-  },
-  name: (selectedContact, item) => ({
-    fontSize: SIZES.large,
-    fontFamily: FONT.medium,
-    color: selectedContact === item.id ? COLORS.white : COLORS.primary,
-  }),
-  infoWrapper: {
-    flexDirection: "row",
-    marginTop: 5,
-    justifyContent: "flex-start",
-    alignItems: "center",
-  },
-  publisher: (selectedContact) => ({
-    fontSize: SIZES.medium - 2,
+  primaryText: (selectedContact, item) => ({
+    fontSize: SIZES.medium,
     fontFamily: FONT.bold,
     color: selectedContact === item.id ? COLORS.white : COLORS.primary,
   }),
-  location: {
-    fontSize: SIZES.medium - 2,
-    fontFamily: FONT.regular,
-    color: "#B3AEC6",
-  },
+  textContainer: {
+    flex: 1,
+    marginHorizontal: SIZES.medium,
+  }
 });
 
 export default styles;

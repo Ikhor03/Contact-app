@@ -16,7 +16,7 @@ const Contacts = () => {
   const {data, isLoading, error} = useFetch('', {});
 
   const handleCardPress = (item) => {
-    router.push(`/contact-details/${item.id}`);
+    // router.push(`/contact-details/${item.id}`);
     setSelectedContact(item);
   };
 

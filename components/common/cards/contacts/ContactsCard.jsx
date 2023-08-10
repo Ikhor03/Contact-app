@@ -23,15 +23,14 @@ const ContactCard = ({item, selectedContact, handleCardPress}) => {
         />
       </TouchableOpacity>
 
-      <Text style={styles.firstName} numberOfLines={1}>{item.phone}</Text>
 
-      <View style={styles.infoContainer}>
-        <Text style={styles.name(selectedContact, item)}>
+      <View style={styles.textContainer}>
+        <Text style={styles.primaryText(selectedContact, item)} numberOfLines={1}>
           {`${item.firstName} ${item.lastName}`}
         </Text>
-      </View>
 
-      <Text style={styles.location}>{item.address.city}</Text>
+        <Text style={styles.secondaryText}>{item.phone}</Text>
+      </View>
     </TouchableOpacity>
   )
 }
