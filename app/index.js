@@ -21,7 +21,7 @@ const Home = () => {
           headerStyle: { backgroundColor: COLORS.lightWhite },
           headerShadowVisible: false,
           headerLeft: () => (
-            <ScreenHeaderBtn iconUrl={icons.menu} dimension={"60%"} />
+            <ScreenHeaderBtn iconUrl={icons.add} dimension={"60%"} handlePress={() => router.push('/add-contact')}/>
           ),
           headerRight: () => (
             <ScreenHeaderBtn iconUrl={images.profile} dimension={"100%"} />

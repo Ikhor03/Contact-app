@@ -24,8 +24,8 @@ const Contacts = () => {
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.headerTitle}>Your Contacts</Text>
-        <TouchableOpacity>
-          <Text style={styles.headerBtn} >Show all</Text>
+        <TouchableOpacity onPress={() => router.push('/add-contact')}>
+          <Text style={styles.headerBtn} >NEW</Text>
         </TouchableOpacity>
       </View>
 

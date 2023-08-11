@@ -4,7 +4,7 @@ import {
 } from 'react-native';
 import { Stack, useRouter, useSearchParams, useLocalSearchParams } from 'expo-router';
 
-import { Company, ContactsAbout, ContactsFooter, ContactsTabs, ScreenHeaderBtn, Specifics } from "../../components";
+import { HeaderDetail, ContactsAbout, ContactsFooter, ContactsTabs, ScreenHeaderBtn, Specifics, OptionModal } from "../../components";
 import { COLORS, icons, SIZES } from '../../constants';
 import { useFetch } from '../../hook/useFetch';
 
@@ -14,6 +14,7 @@ const CotactDetail = () => {
 
   const [refreshing, setRefreshing] = useState(false);
   const [activeTab, setActiveTab] = useState('contact')
+  const [modalVisible, setModalVisible] = useState(false);
 
   const tabs = ['contact', 'address', 'company']
 
@@ -30,7 +31,7 @@ const CotactDetail = () => {
       case 'contact':
         return <Specifics
           title="Contact"
-          points={[data.phone, data.email, data.firstName + " " + data.lastName]}
+          points={[data.phone, data.email]}
         />
 
       case 'address':
@@ -67,9 +68,9 @@ const CotactDetail = () => {
           ),
           headerRight: () => (
             <ScreenHeaderBtn
-              iconUrl={icons.heart}
+              iconUrl={icons.userEdit}
               dimension="60%"
-              handlePress={() => router.back()}
+              handlePress={() => setModalVisible(true)}
             />
           ),
           headerTitle: ''
@@ -77,6 +78,11 @@ const CotactDetail = () => {
       >
 
       </Stack.Screen>
+      <OptionModal 
+        modalVisible={modalVisible}
+        setModalVisible={setModalVisible}
+        id={params.id}
+      />
 
       <ScrollView
         showsVerticalScrollIndicator={false}
@@ -91,9 +97,9 @@ const CotactDetail = () => {
             <Text>No data here</Text>
           ) : (
             <View style={{ padding: SIZES.medium, paddingBottom: 100 }}>
-              <Company
+              <HeaderDetail
                 image={data.image}
-                name={data.firstName}
+                name={data.firstName + " " + data.lastName}
                 phone={data.phone}
                 address={data.address}
               />

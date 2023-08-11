@@ -1,10 +1,10 @@
 import React from 'react'
 import { View, Text, Image } from 'react-native'
 
-import styles from './company.style'
+import styles from './headerDetail.style'
 import { icons } from '../../../constants';
 
-const Company = ({ image, name, phone, address }) => {
+const HeaderDetail = ({ image, name, phone, address }) => {
   // console.log({image, name, phone, address})
   return (
     <View style={styles.container}>
@@ -19,7 +19,7 @@ const Company = ({ image, name, phone, address }) => {
       </View>
 
       <View style={styles.companyInfoBox}>
-        <Text style={styles.companyName}>{phone}</Text>
+        <Text style={styles.companyName}>{`${phone} `}</Text>
         <View style={styles.locationBox}>
           <Image
             source={icons.location}
@@ -33,4 +33,4 @@ const Company = ({ image, name, phone, address }) => {
   )
 }
 
-export default Company
+export default HeaderDetail
