@@ -4,7 +4,7 @@ import { Stack, useLocalSearchParams, useRouter, useSearchParams } from 'expo-ro
 import { Text, SafeAreaView } from 'react-native'
 import axios from 'axios'
 
-import { ScreenHeaderBtn, NearbyJobCard } from '../../components'
+import { ScreenHeaderBtn } from '../../components'
 import { COLORS, icons, SIZES } from '../../constants'
 import styles from '../../styles/search'
 import ContactCard from '../../components/common/cards/contacts/ContactsCard'
@@ -89,7 +89,7 @@ const ContactSearch = () => {
                     <>
                         <View style={styles.container}>
                             <Text style={styles.searchTitle}>{params.query}</Text>
-                            <Text style={styles.noOfSearchedJobs}>Your Contact</Text>
+                            <Text style={styles.noOfSearchedContactss}>Your Contact</Text>
                         </View>
                         <View style={styles.loaderContainer}>
                             {searchLoader ? (
@@ -100,7 +100,7 @@ const ContactSearch = () => {
                         </View>
                     </>
                 )}
-                
+
                 ListFooterComponent={() => (
                     <View style={styles.footerContainer}>
                         <TouchableOpacity

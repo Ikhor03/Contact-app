@@ -20,10 +20,10 @@ const styles = StyleSheet.create({
     width: "80%",
     height: "80%",
   },
-  jobTitleBox: {
+  contactsTitleBox: {
     marginTop: SIZES.small,
   },
-  jobTitle: {
+  contactsTitle: {
     fontSize: SIZES.large,
     color: COLORS.primary,
     fontFamily: FONT.bold,

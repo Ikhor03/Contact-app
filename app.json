@@ -5,6 +5,9 @@
       "bundler": "metro"
     },
     "name": "react-native-contact",
-    "slug": "react-native-contact"
+    "slug": "react-native-contact",
+    "plugins": [
+      "expo-router"
+    ]
   }
 }

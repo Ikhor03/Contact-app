@@ -2,28 +2,23 @@ import ScreenHeaderBtn from "./common/header/ScreenHeaderBtn";
 
 // home screen
 import Welcome from "./home/welcome/Welcome";
-import Nearbyjobs from "./home/nearby/Nearbyjobs";
 import Contacts from "./home/contacts/Contacts";
 
-// job details screen
-import Company from "./jobdetails/company/Company";
-import { default as JobTabs } from "./jobdetails/tabs/Tabs";
-import { default as JobAbout } from "./jobdetails/about/About";
-import { default as JobFooter } from "./jobdetails/footer/Footer";
-import Specifics from "./jobdetails/specifics/Specifics";
+// contacts details screen
+import Company from "./contactsdetails/company/Company";
+import { default as ContactsTabs } from "./contactsdetails/tabs/Tabs";
+import { default as ContactsAbout } from "./contactsdetails/about/About";
+import { default as ContactsFooter } from "./contactsdetails/footer/Footer";
+import Specifics from "./contactsdetails/specifics/Specifics";
 
-// common
-import NearbyJobCard from "./common/cards/nearby/NearbyJobCard";
 
 export {
   ScreenHeaderBtn,
   Welcome,
-  Nearbyjobs,
   Contacts,
   Company,
-  JobTabs,
-  JobAbout,
-  JobFooter,
+  ContactsTabs,
+  ContactsAbout,
+  ContactsFooter,
   Specifics,
-  NearbyJobCard
 };

@@ -2,26 +2,26 @@ import React from 'react'
 import { View, Text, Image } from 'react-native'
 
 import styles from './company.style'
-import {icons} from '../../../constants';
+import { icons } from '../../../constants';
 
-const Company = ({image, name, phone, address }) => {
+const Company = ({ image, name, phone, address }) => {
   // console.log({image, name, phone, address})
   return (
     <View style={styles.container}>
       <View style={styles.logoBox}>
-        <Image source={{ uri: image}} 
+        <Image source={{ uri: image }}
           style={styles.logoImage}
         />
       </View>
 
-      <View style={styles.jobTitle} >
+      <View style={styles.contactsTitle} >
         <Text>{name}</Text>
       </View>
 
       <View style={styles.companyInfoBox}>
         <Text style={styles.companyName}>{phone}</Text>
         <View style={styles.locationBox}>
-          <Image 
+          <Image
             source={icons.location}
             resizeMode='contain'
             style={styles.locationImage}

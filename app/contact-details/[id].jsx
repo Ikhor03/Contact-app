@@ -4,7 +4,7 @@ import {
 } from 'react-native';
 import { Stack, useRouter, useSearchParams, useLocalSearchParams } from 'expo-router';
 
-import { Company, JobAbout, JobFooter, JobTabs, ScreenHeaderBtn, Specifics } from "../../components";
+import { Company, ContactsAbout, ContactsFooter, ContactsTabs, ScreenHeaderBtn, Specifics } from "../../components";
 import { COLORS, icons, SIZES } from '../../constants';
 import { useFetch } from '../../hook/useFetch';
 
@@ -15,7 +15,7 @@ const CotactDetail = () => {
   const [refreshing, setRefreshing] = useState(false);
   const [activeTab, setActiveTab] = useState('contact')
 
-  const tabs= ['contact', 'address', 'company']
+  const tabs = ['contact', 'address', 'company']
 
   const { data, isLoading, error, refetch } = useFetch(`/${params.id}`)
 
@@ -26,28 +26,28 @@ const CotactDetail = () => {
   }, [])
 
   const displayTabContent = () => {
-    switch(activeTab) {
-      case'contact' : 
-        return <Specifics 
+    switch (activeTab) {
+      case 'contact':
+        return <Specifics
           title="Contact"
           points={[data.phone, data.email, data.firstName + " " + data.lastName]}
         />
-      
-      case 'address' : 
-        return <JobAbout 
-          title= 'Address'
-          info={`${data.address.address}, ${data.address.city} ${data.address.state} ${data.address.postalCode}` 
-          ?? "No data provided"}
+
+      case 'address':
+        return <ContactsAbout
+          title='Address'
+          info={`${data.address.address}, ${data.address.city} ${data.address.state} ${data.address.postalCode}`
+            ?? "No data provided"}
         />
-      
-      case 'company' : 
+
+      case 'company':
         return <Specifics
           title="Company"
           points={[data.company.name, data.company.title, data.company.department]}
         />
 
       default:
-      break;
+        break;
     }
   }
 
@@ -90,15 +90,15 @@ const CotactDetail = () => {
           ) : !data ? (
             <Text>No data here</Text>
           ) : (
-            <View style={{padding : SIZES.medium, paddingBottom : 100}}>
-              <Company 
+            <View style={{ padding: SIZES.medium, paddingBottom: 100 }}>
+              <Company
                 image={data.image}
                 name={data.firstName}
                 phone={data.phone}
                 address={data.address}
               />
 
-              <JobTabs 
+              <ContactsTabs
                 tabs={tabs}
                 activeTab={activeTab}
                 setActiveTab={setActiveTab}
@@ -111,7 +111,7 @@ const CotactDetail = () => {
         }
       </ScrollView>
 
-      <JobFooter url={data.domain} />
+      <ContactsFooter url={data.domain} />
     </SafeAreaView>
   )
 }

@@ -36,21 +36,14 @@ const Contacts = () => {
           ) : error ? (
             <Text>Something went wrong</Text>
           ) : (
-            <FlatList
-              data={data}
-              renderItem={({item}) => (
-                <ContactCard
-                  item={item}
-                  selectedContact={selectedContact}
-                  handleCardPress={handleCardPress}
-                />
-              )}
-
-              keyExtractor={item => item.id}
-              contentContainerStyle={{columnGap : SIZES.medium}}
-              
-              // horizontal
-            />
+            data.map((item) => (
+              <ContactCard
+                key={item.id}
+                item={item}
+                selectedContact={selectedContact}
+                handleCardPress={handleCardPress}
+              />
+            ))
           )
         }
 
