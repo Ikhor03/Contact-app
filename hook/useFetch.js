@@ -18,8 +18,8 @@ export const useFetch = (endpoint, query) => {
 
         try {
             const res = await axios.request(options);
-
-            setData(res.data.users);
+            
+            setData(res.data.users || res.data);
             setIsLoading(false);
         } catch (error) {
             setError(error);
