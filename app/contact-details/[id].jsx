@@ -1,15 +1,15 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import {
   Text, View, SafeAreaView, ScrollView, ActivityIndicator, RefreshControl
 } from 'react-native';
-import { Stack, useRouter, useSearchParams } from 'expo-router';
+import { Stack, useRouter, useSearchParams, useLocalSearchParams } from 'expo-router';
 
 import { Company, JobAbout, JobFooter, JobTabs, ScreenHeaderBtn, Specifics } from "../../components";
 import { COLORS, icons, SIZES } from '../../constants';
 import { useFetch } from '../../hook/useFetch';
 
 const CotactDetail = () => {
-  const params = useSearchParams();
+  const params = useLocalSearchParams();
   const router = useRouter()
 
   const [refreshing, setRefreshing] = useState(false);
@@ -19,9 +19,11 @@ const CotactDetail = () => {
 
   const { data, isLoading, error, refetch } = useFetch(`/${params.id}`)
 
-  const onRefresh = () => {
-
-  }
+  const onRefresh = useCallback(() => {
+    setRefreshing(true);
+    refetch();
+    setRefreshing(false);
+  }, [])
 
   const displayTabContent = () => {
     switch(activeTab) {
@@ -60,14 +62,14 @@ const CotactDetail = () => {
             <ScreenHeaderBtn
               iconUrl={icons.left}
               dimension="60%"
-              haandlePress={() => router.back()}
+              handlePress={() => router.back()}
             />
           ),
           headerRight: () => (
             <ScreenHeaderBtn
               iconUrl={icons.heart}
               dimension="60%"
-              haandlePress={() => router.back()}
+              handlePress={() => router.back()}
             />
           ),
           headerTitle: ''

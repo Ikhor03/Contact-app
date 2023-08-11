@@ -14,7 +14,7 @@ import { useRouter } from 'expo-router';
 
 const contactType = [ 'male', 'female', 'teman', 'keluarga', 'kolega'];
 
-const Welcome = () => {
+const Welcome = ({searchTerm, setSearchTerm, handleClick}) => {
   const [activeContactType, setActiveContactType] = useState()
   const router = useRouter()
   return (
@@ -31,15 +31,15 @@ const Welcome = () => {
         <View style={styles.searchWrapper} >
           <TextInput 
             style={styles.searchInput}
-            value=''
-            onChange={() => {}}
+            value={searchTerm}
+            onChangeText={(text) => setSearchTerm(text)}
             placeholder="who are you looking for?"
           />
         </View>
 
         <TouchableOpacity 
           style={styles.searchBtn}
-          onPress={() => {}}
+          onPress={handleClick}
         >
           <Image source={icons.search}
             resizeMode='contain'
@@ -56,7 +56,7 @@ const Welcome = () => {
               style={styles.tab(activeContactType, item)}
               onPress={() => {
                 setActiveContactType(item);
-                // router.push(`/search/${item}`)
+                router.push(`/search/${item}`)
               }}
             >
               <Text style={styles.tabText(activeContactType, item)}>{item}</Text>
