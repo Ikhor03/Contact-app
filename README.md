@@ -13,7 +13,7 @@
 ## About The Project
 <div align="center">
   <a href="https://github.com/Ikhor03/TokopediaPlay">
-    <img src="./assets/contact-ss.jpg" alt="ss-app" width="70" height="auto">
+    <img src="./assets/contact-ss.jpg" alt="ss-app" width="200" height="auto">
   </a>
 </div>
 
