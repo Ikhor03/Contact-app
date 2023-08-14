@@ -11,9 +11,7 @@
 <!-- ABOUT THE PROJECT -->
 
 ## About The Project
-
-[![Product Name Screen Shot][product-screenshot]](https://github.com/Ikhor03/Contact-app)
-<img src="./assets/contact-ss.jpg" height="auto" width="100px" />
+<img src="./assets/contact-ss.jpg" height="auto" width="400px" />
 
 This is my first mobile app project, and it was quite a challenge. I had the same deadline for another project while working on this one, making it an incredibly busy week. However, it wasn't as bad as it sounds. I never thought building a mobile app would bring me so much joy, especially when I see the results directly on my phone. This app is a simple contact application that integrates data from the [Dummyjson](https://dummyjson.com/) user API. It also features a live search function.
 
