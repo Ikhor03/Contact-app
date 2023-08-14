@@ -8,6 +8,22 @@
     "slug": "react-native-contact",
     "plugins": [
       "expo-router"
-    ]
+    ],
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "0fddff59-b558-44b3-8fd9-e7c403601cce"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/0fddff59-b558-44b3-8fd9-e7c403601cce"
+    },
+    "android": {},
+    "ios": {}
   }
 }
